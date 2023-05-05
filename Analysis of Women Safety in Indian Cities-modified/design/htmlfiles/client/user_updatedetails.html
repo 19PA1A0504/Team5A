@@ -1,0 +1,134 @@
+{% extends 'client/base.html' %}
+{% block userblock %}
+{% load static %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aldrich&display=swap" rel="stylesheet">
+<style>
+   #customers{
+       font-family: 'Aldrich', sans-serif;
+       border-collapse:collapse;
+       width:40%;
+       font-size:25px;
+       color:papayawhip;
+       background-color:steelblue;
+               margin-left: 395px;
+        margin-top: 68px;
+    position: absolute;
+
+       }
+       #customers td, #customers th{
+       border:1px solid #ddd;
+
+       }
+
+
+
+       #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: black  ;
+    color: white;
+}
+input {
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    padding: 0px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+    border-radius:10px;
+    font-family:Abel;
+    font-size:20px;
+        text-align: center;
+}
+.imga{
+background: url("{% static 'admin.jpeg' %}");
+background-size:100% 100%;
+height:-webkit-fill-available;
+width:100%;
+overflow: auto;
+
+}
+.imgs{
+background: url("{% static 'update.png' %}");
+width:100px:
+height:200px;
+
+
+}
+input[type="submit" i],
+{
+
+
+}
+.log{
+        background: url("{% static 'update.png' %} ");
+        background-size:cover;
+        width:120px;
+        height:50px;
+            margin-left: 397px;
+    margin-top: 433px;
+
+    position: absolute;
+        }
+
+</style>
+<body>
+<form method="POST">
+    {% csrf_token %}
+    <div class="space">
+         <div class="imga">
+    <table id="customers">
+        <tr>
+            <td>NAME :</td>
+            <td><input type="text" name="name" value="{{ form.name }}"></td>
+        </tr>
+        <tr>
+            <td>EMAIL :</td>
+            <td><input type="text" name="email" value="{{ form.email }}"></td>
+        </tr>
+        <tr>
+            <td>PASSWORD :</td>
+            <td><input type="password" name="password" value="{{ form.password }}"></td>
+        </tr>
+        <tr>
+            <td>PHONE NUMBER</td>
+            <td><input type="text" name="phoneno" value="{{ form.phoneno }}"></td>
+        </tr>
+        <tr>
+            <td>ADDRESS :</td>
+            <td><input type="text" name="address" value="{{ form.address}}"></td>
+        </tr>
+        <tr>
+            <td>DOB</td>
+            <td><input type="text" name="dob" value="{{ form.dob }}"></td>
+        </tr>
+         <tr>
+            <td>COUNTRY</td>
+            <td><input type="text" name="country" value="{{ form.country }}"></td>
+        </tr>
+         <tr>
+            <td>STATE</td>
+            <td><input type="text" name="state" value="{{ form.state }}"></td>
+        </tr>
+         <tr>
+            <td>CITY</td>
+            <td><input type="text" name="city" value="{{ form.city }}"></td>
+        </tr>
+
+            <input type="submit" class="log" value="SUBMIT" >
+
+    </table>
+         </div>
+    </div>
+</form>
+
+
+</body>
+{% endblock %}

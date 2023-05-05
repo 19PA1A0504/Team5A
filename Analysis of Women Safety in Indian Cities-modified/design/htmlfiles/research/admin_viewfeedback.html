@@ -1,0 +1,65 @@
+{% extends 'research/base1.html' %}
+{% block adminblock %}
+{% load static %}
+<style>
+   .viewfeedback{
+     position: absolute;
+    top:132px;
+    left:px;
+    padding:5px;
+    height:400px;
+    width:670px;
+    overflow:scroll;
+    }
+    .viewfeedback table{
+    width:40em;
+    text-align:center;
+
+    border-spacing:1px;
+    background:;
+}
+
+
+.viewfeedback table tr th{
+background:rgb(0,0,0);
+padding:5px;
+}
+.viewfeedback table tr td{
+background:rgba(0,0,0,0.5);
+padding:5px;
+}
+.viewfeedback table tr:hover td{
+background:rgba(0,0,0,0.5);
+}
+.viewfeedbackimage{
+border-style:solid;
+ border-width:1px;
+ height:430px;
+ width:360px;
+ margin-top:10px;
+ margin-left:840px;
+ background: url("{% static 'bg1.gif' %}");
+ background-size: 100%100%;
+ float:left;
+}
+
+</style>
+<div class="viewfeedback"><table>
+    <tr>
+        <th style="color:yellow">name</th>
+        <th style="color:yellow">mobilenumber</th>
+        <th style="color:yellow">feedback</th>
+    </tr>
+    <tr>
+    {% for o in objects %}
+    <td style="color:white">{{o.name}}</td>
+    <td style="color:white">{{o.mobilenumber}}</td>
+    <td style="color:white">{{o.feedback}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</div>
+<div class="viewfeedbackimage"></div>
+
+{% endblock %}

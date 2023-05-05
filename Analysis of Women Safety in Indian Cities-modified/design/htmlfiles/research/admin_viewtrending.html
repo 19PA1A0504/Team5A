@@ -1,0 +1,76 @@
+{% extends 'research/base1.html' %}
+{% block adminblock %}
+{% load static %}
+<style>
+   .viewtopic{
+    position: absolute;
+    top:132px;
+    left:200px;
+    padding:10px;
+    width:500px;
+    height:400px;
+    overflow:scroll;
+    float:left;
+}
+
+.viewtopic table{
+    width:30em;
+    text-align:center;
+    border-collapse:collapse;
+    border-spacing:1px;
+    background:;
+    float:left;
+}
+
+.viewtopic table tr th{
+    color:;
+}
+.viewtopic table tr th{
+background:
+padding:10px;
+}
+.viewtopic table tr td{
+background:rgb(0,0,0);
+padding:10px;
+}
+.viewtopic table tr:hover td{
+background:rgba(204, 0, 255);
+}
+.topicimage{
+border-style:solid;
+ border-width:1px;
+ height:280px;
+ width:380px;
+ margin-top:70px;
+ margin-left:840px;
+
+ background: url("{% static 'bg1.gif' %}");
+ background-size: 100%100%;
+ float:left;
+
+}
+
+
+</style>
+
+
+<div class="viewtopic">
+<table>
+    <tr>
+
+
+    </tr>
+    <tr>
+        {% for object in objects %}
+
+
+        <td style="color:yellow">{{object.topics}}</td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+
+</div>
+<div class="topicimage"></div>
+{% endblock %}

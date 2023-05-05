@@ -1,0 +1,68 @@
+{% extends 'research/base1.html' %}
+{% block adminblock %}
+{% load static %}
+<style>
+
+.viewpage{
+     position: absolute;
+    top:132px;
+    left:px;
+    padding:5px;
+    height:400px;
+    width:1300px;
+    overflow:scroll;
+    }
+    .viewpage table{
+    width:80em;
+    text-align:center;
+
+    border-spacing:1px;
+    background:;
+}
+
+
+.viewpage table tr th{
+background:rgb(0,0,0);
+padding:5px;
+}
+.viewpage table tr td{
+background:rgba(0,0,0,0.5);
+padding:5px;
+}
+.viewpage table tr:hover td{
+background:rgba(0,0,0,0.5);
+}
+
+
+</style>
+
+
+<div class="viewpage">
+<table><br><br><br><br><br><br><br><br><br>
+    <tr>
+		<th style="color:yellow">ID</th>
+        <th style="color:yellow">NAME</th>
+        <th style="color:yellow">EMAIL</th>
+        <th style="color:yellow">PHONE NUMBER</th>
+        <th style="color:yellow">ADDRESS</th>
+        <th style="color:yellow">DOB</th>
+        <th style="color:yellow">COUNTRY</th>
+        
+    </tr>
+    <tr>
+
+        {% for o in object %}
+		<td style="color:white">{{o.id}}</td>
+        <td style="color:white">{{o.name}}</td>
+        <td style="color:white"> {{o.email}}</td>
+        <td style="color:white">{{o.phoneno}}</td>
+        <td style="color:white">{{o.address}}</td>
+        <td style="color:white">{{o.dob}}</td>
+        <td style="color:white">{{o.country}}</td>
+        <td><a href="block/{{ o.id }}">Block</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</div>
+{% endblock %}

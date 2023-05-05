@@ -1,0 +1,74 @@
+{% extends 'research/base1.html' %}
+{% block adminblock %}
+{% load static %}
+<style>
+    .values{
+    height:10px;
+    width:10px;
+    overflow:scroll;
+    }
+.any{
+ border-style: double;
+    height: 100px;
+    width: 153px;
+    background: whitesmoke;
+    font-family: Aldrich;
+    color: black;
+    border-radius: 7px;
+    text-align: center;
+}
+
+</style>
+    <script>
+window.onload = function() {
+
+var chart= new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title: {
+		text: "ANALYSIS"
+	},
+	data: [{
+		type: "bar",
+		startAngle: 240,
+		dataPoints: [
+		{% for k,v in dd.items %}
+            {y: {{v.1}},label: "{{k.0}}{{k.1}}{{k.2}}{{k.3}}{{k.4}}{{k.5}}{{k.6}}{{k.7}}{{k.8}}{{k.9}}"},
+        {% endfor %}
+		]
+	}]
+});
+chart.render();
+
+}
+
+</script>
+
+</head>
+<div class="values">
+<table>
+    <tr>
+        <th>Topics</th>
+        <th>Poistive Comments</th>
+        <th>Negative Comments</th>
+        <th>Neutral Comments</th>
+    </tr>
+    {% for key,values in dd.items %}
+    <tr>
+        <td>{{key}}</td>
+            <td>{{values.0}}</td>
+            <td>{{values.1}}</td>
+            <td>{{values.2}}</td>
+    {% endfor %}
+    </tr>
+    </table>
+    </div>
+<div class="any">
+
+    <a href="{% url 'viewtreandingtopics' 'bar' %}"><h4 style="color:green">Poistive</h4></a>
+    <a href="{% url 'negativefeedbacktivechart' 'bar' %}"><h4 style="text-align:center;color:red">Negative</h4></a>
+
+</div>
+<div id="chartContainer" class="graph"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+{% endblock %}

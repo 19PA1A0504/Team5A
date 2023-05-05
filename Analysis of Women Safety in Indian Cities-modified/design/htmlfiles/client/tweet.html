@@ -1,0 +1,60 @@
+{% extends 'client/base.html' %}
+{% block userblock %}
+{% load static %}
+<style>
+    .message{
+
+    font-family:'Ubuntu Condensed', sans-serif;
+        padding: 63px;
+    font-size: 25px;
+    }
+    textarea{
+    font-family:'Ubuntu Condensed', sans-serif;
+    font-size:18px;
+    }
+    .submit{
+        padding: 5px;
+    border-radius: 7px;
+    width: 96px;
+    font-family: cooper;
+    height: 47px;
+    font-size: 21px;
+    }
+    .feedbackimage{
+    border-style:solid;
+     border-width:1px;
+     height:280px;
+     width:260px;
+     margin-top: -257px;
+     margin-left: 850px;
+
+     background: url("{% static 'bg1.gif' %}");
+     background-size: 100%100%;
+
+}
+</style>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
+
+<body>
+<form method="POST">
+    {% csrf_token %}
+
+    <table class="message">
+        <tr>
+            <td>Upload Images</td>
+            <td><input type="file" name="images"></td>
+        </tr>
+        <tr>
+            <td>Message</td>
+            <td> <textarea name="tweet" cols="60" rows="8" ></textarea> </td>
+        </tr>
+        <tr>
+            <td><input type="submit" class="submit" value="POST"></td>
+            <td><a href="{% url 'tweetview' %}">CHECK YOUR PROCESS</a> </td>
+        </tr>
+    </table>
+</form>
+<div class="feedbackimage"></div>
+</div>
+</body>
+{% endblock %}

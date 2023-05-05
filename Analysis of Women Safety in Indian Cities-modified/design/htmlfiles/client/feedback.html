@@ -1,0 +1,81 @@
+{% extends 'client/base.html' %}
+{% block userblock %}
+{% load static %}
+
+<style>
+   .feedback{
+    position: absolute;
+    top:200px;
+    left:200px;
+    padding:10px;
+    width:500px;
+}
+
+.feedback table{
+    width:30em;
+    text-align:center;
+    //border-collapse:collapse;
+    border-spacing:1px;
+    background:;
+}
+
+.feedback table tr th{
+    color:;
+}
+.feedback table tr th{
+background:
+padding:10px;
+}
+.feedback table tr td{
+background:rgb(0,0,0);
+padding:10px;
+}
+.feedback table tr:hover td{
+background:rgba(204, 0, 255);
+}
+ .feedbackimage{
+border-style:solid;
+ border-width:1px;
+ height:280px;
+ width:260px;
+ margin-top:-240px;
+ margin-left:640px;
+
+ background: url("{% static 'bg1.gif' %}");
+ background-size: 100%100%;
+
+}
+
+
+
+
+
+</style>
+
+<div class="feedback">
+    <form method="post" autocomplete="off">
+
+    {% csrf_token %}
+
+    <table>
+        <tr>
+            <td style="color:yellow">Name </td>
+            <td><input type="text" name="name"> </td>
+        </tr>
+        <tr>
+            <td style="color:yellow">Mobilenumber</td>
+            <td ><input type="text" name="mobilenumber"> </td>
+        </tr>
+        <tr>
+            <td style="color:yellow">Feedback</td>
+            <td><textarea name="feedback" cols="40" rows="4"></textarea></td>
+        </tr>
+        <tr>
+        <td colspan="3" style="text-align:center"><input type="submit" name="submit" value="submit" style="background-color:black;color:yellow;" ><br></td>
+    </tr>
+    </table>
+</form>
+    <div class="feedbackimage"></div>
+</div>
+
+{% endblock %}

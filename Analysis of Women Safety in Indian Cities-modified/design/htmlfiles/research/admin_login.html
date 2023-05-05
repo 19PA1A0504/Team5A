@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analysis of Women Safety in Indian Cities
+</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aldrich&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+        height: 100%;
+        margin: 0;
+        }
+        body{
+        background: url("{% static 'bg.jpg' %}");
+        height: %;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+            border: 12px solid #dbe2e8;
+        }
+        input {
+         padding: 7px -4px;
+    border-radius: 5px;
+    margin: 10px;
+        }
+        .table {
+   display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
+    margin-top: 103px;
+    margin-left: 943px;
+    font-family: 'Aldrich', sans-serif;
+    font-size: unset;
+    color: black;
+    border: 12px solid #dbe2e8;
+    border-radius: 10px;
+    background-color: white;
+    width: 100px;
+}
+.table td, .table th {
+        padding: 0px;
+    vertical-align: unset;
+    border-top: 1px solid #dee2e6;
+}
+    }
+        .register{
+        position:absolute;
+        top:50%;
+        left:73%;
+        transform: translate(-50%, -50%);
+        background-color:teal;
+        font-family: 'Aldrich', sans-serif;
+
+        color:white;
+        font-size:16px;
+        padding: 12px 24px;
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: center;
+        margin-top: 191px;
+        margin-left: -409px;
+        }
+
+        .register:hover{
+        background-color: black;
+        background: url("{% static 'hotel.jpg' %}");
+
+        }
+
+        h1{
+        font-family: 'Dancing Script', cursive;
+
+           text-shadow: 0 0 31px, 0 0 51px white;
+    text-align: center;
+    color: black;
+    font-size: 50px;
+    background-color: whitesmoke;
+        }
+        .log{
+        background: url("{% static 'login.png' %} ");
+        background-size:cover;
+        width:100px;
+        height:50px;
+        }
+        tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+    </style>
+</head>
+<body>
+<h1>Analysis of Women Safety in Indian Cities</h1>
+<form method="POST">
+    {% csrf_token %}
+    <table class="table">
+        <tr>
+            <td>ADMIN NAME:</td>
+            <td><input type="text" name="admin" value="" class=""></td>
+        </tr>
+        <tr>
+            <td>PASSWORD:</td>
+            <td><input type="password" name="password" class="" ></td>
+        </tr>
+        <tr>
+            <td><input type="submit" class="log"   name="login" value="" >
+        </tr>
+
+    </table>
+
+</form>
+</body>
+</html>

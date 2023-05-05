@@ -1,0 +1,66 @@
+{% extends 'client/base.html' %}
+{% block userblock %}
+{% load static %}
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#eee;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 1104px;
+    height: 442px;
+    overflow: scroll;
+   background-color: wheat;
+}
+		</style>
+
+	<body>
+
+                            <div class="tweettext">
+
+                                <table>
+                                    <tr>
+                                    {% for object in list_objects %}
+                                    <tr>
+                                        <td style="color:red; font-size:25px;">{{object.userId.name}}</td></tr>
+                                    <tr>
+                                        <td >{{object.images}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color:blue">{{object.tweet}}</td></tr>
+
+                                        </tr>
+                                        {% endfor %}
+                                </table>
+
+
+
+
+                            </div>
+
+
+
+
+
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+
+{% endblock %}
+    <tr>

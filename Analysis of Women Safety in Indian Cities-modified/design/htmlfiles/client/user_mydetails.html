@@ -1,0 +1,106 @@
+{% extends 'client/base.html' %}
+{% block userblock %}
+{% load static %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aldrich&display=swap" rel="stylesheet">
+
+<style>
+    #customers{
+font-family: 'Aldrich', sans-serif;
+
+       border-collapse:collapse;
+       width:40%;
+       font-size:25px;
+       color:papayawhip;
+       background-color:steelblue;
+         padding: 10px;
+    margin-top: 70px;
+    margin-left: 435px;
+
+       }
+       #customers td, #customers th{
+       border:1px solid #ddd;
+
+
+       }
+
+
+
+       #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: black  ;
+    color: white;
+
+}
+.imga{
+background: url("{% static 'admin.jpeg' %}");
+background-size:100% 100%;
+height:-webkit-fill-available;
+width:100%;
+position: absolute;
+}
+table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+
+
+</style>
+
+
+<body>
+<form method="POST">
+    {% csrf_token %}
+    <div class="imga">
+    <table id="customers">
+        <tr>
+            <td>NAME :</td>
+            <td>{{ object.name }}</td>
+        </tr>
+        <tr>
+            <td>EMAIL :</td>
+            <td>{{ object.email }}</td>
+        </tr>
+        <tr>
+            <td>PASSWORD :</td>
+            <td>{{ object.password }}</td>
+        </tr>
+        <tr>
+            <td>PHONE NUMBER</td>
+            <td>{{ object.phoneno }}</td>
+        </tr>
+        <tr>
+            <td>ADDRESS :</td>
+            <td>{{ object.address}}</td>
+        </tr>
+        <tr>
+            <td>DOB</td>
+            <td>{{ object.dob }}</td>
+        </tr>
+        <tr>
+            <td>COUNTRY</td>
+            <td>{{ object.country }}</td>
+        </tr>
+        <tr>
+            <td>STATE</td>
+            <td>{{ object.state }}</td>
+        </tr>
+        <tr>
+            <td>CITY</td>
+            <td>{{ object.city }}</td>
+        </tr>
+    </table>
+    </div>
+
+
+</form>
+
+</body>
+{% endblock %}

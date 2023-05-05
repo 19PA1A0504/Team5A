@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analysis of Women Safety in Indian Cities</title>
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aldrich&display=swap" rel="stylesheet">
+    <style>
+        body{
+        background: url("{% static 'bg.jpg' %}");
+        background-size: cover;
+        }
+        .menu table{
+        width:100%;
+        text-align:center;
+        }
+        .menu table td:hover{
+        background:rgb(0,0,0);
+        }
+        .menu table td{
+        background: #584b4f;
+        }
+        .menu table,.menu table th,.menu table td {
+        border: ;
+        border-collapse: collapse;
+        }
+        .menu table th,.menu table  td {
+        padding: 15px;
+        }
+        .topic h1{
+         color:white;
+         padding:10px;
+         text-align:center;
+         border-style:none;
+         height:100px;
+         width:1330px;
+         float:left;
+         font-family: 'Dancing Script', cursive;
+         }
+        .giver {
+         color: #ffd152;
+        font-family: 'Aldrich', sans-serif;
+         padding:;
+         }
+        .giver a{
+            color: steelblue;
+            font-family: cooper;
+
+            cursor: pointer;
+            text-decoration: none;
+            background-color: whitesmoke;
+            border-radius: 5px;
+        }
+        h1{
+        font-family: 'Dancing Script', cursive;
+        font-size:50px;
+        font-color:;
+        text-align:center;
+           color: tomato;
+    background-color: snow;
+        }
+        h2{
+        font-family: 'Aldrich', sans-serif;
+
+        text-align:30px;
+        text-align:center;
+        margin-top:px;
+        }
+        .menu {
+         border-radius:10px;
+        }
+
+
+
+</style>
+</head>
+<body>
+{% csrf_token %}
+<h1>Analysis of Women Safety in Indian Cities</h1>
+<h2></h2>
+<div class ="menu">
+    <table class="giver">
+        <tr>
+            <td><a href="{% url 'user_mydetails' %}">~MY DETAILS~</a></td>
+            <td><a href="{% url 'user_updatedetails' %}">~UPDATE DETAILS~</a></td>
+            <td><a href="{% url 'tweet' %}">~Upload Message~</a></td>
+            <td><a href="{% url 'feedback' %}">~Feedback~</a></td>
+            <td><a href="{% url 'user_login'  %}">~LOGOUT~</a></td>
+        </tr>
+    </table>
+
+</div>
+<div class="mainholder">
+{% block userblock %}
+{% endblock %}
+</div>
+</body>
+</html>
